@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+    <div class="titulo">
+        <h1>Cadastro de Pessoas em Situação de Rua - CPSR</h1>
+      </div>
+      <div class="container">
+        <div style="width: 25%; height: 25%">
+            <img
+          src="{% static '/img/cadastro.jpg' %}"
+          class="img-fluid"
+          alt=""
+        />
+        <h1>Cadastro de Pessoas</h1>
+    </div>
+    <div style="width: 25%; height: 25%">
+        <img
+          src="{% static '/img/relatorios.jpg' %}"
+          class="img-fluid"
+          alt=""
+        />
+        <h1>Relatórios</h1>
+    </div>
+</div>
+
+    {% else %}
+        Você não tem acesso a essa área! Seu Liso!
+    {% endif %}
+
+    
+{% endblock %}
