@@ -11,12 +11,12 @@
             {% endif %}
             
             {% csrf_token %}  
-            <div class="login-box">
+            <div class="login-box text-center">
             <img src="{% static '/img/login.jpg' %}" class="img-fluid" alt="" />
             <input class="form-control mt-4" type="text" name="user" id="name" placeholder="Nome do Usuário">        
             <input class="form-control mt-4" type="password" name="password" id="password" placeholder="Senha">   
-            <input class="btn btn-dark mt-4" type="submit" value="Entrar">
-            <div style="display: flex">
+            <input class="btn btn-dark mt-4 " type="submit" value="Entrar">
+            <div style="display: flex text-center">
             <a class="btn btn-light" href="/create/">Primeiro acesso</a>&nbsp;
             <a class="btn btn-light" href="/alterar_senha/">Esqueci a senha</a>
             </div>

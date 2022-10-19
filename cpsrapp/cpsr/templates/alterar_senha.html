@@ -1,35 +1,43 @@
 {% extends 'base.html' %}
-
 {% block content %}
+{% load static %}
+
 <head>
     <meta charset="UTF-8">
     <title>Alterar senha</title>
 </head>
+
 <body>
+    <div class="login-box">
+        
+        <form method="post">
+            <div class="col-8 col-sm-6 col-lg-3 col-xl-3 mx-auto m-auto login">
+                <div class="login-box">
+                    <img src="{% static '/img/alterar_senha.jpg' %}" class="img-fluid" alt="" />
+            {% csrf_token %}
+            <div class="form-group  ">
+                {{form_senha.old_password.errors}}
+                <label>Senha antiga: </label>
+                {{form_senha.old_password}}
+            </div>
 
-<form method="post">
-    {% csrf_token %}
+            <div class="form-group mt-4">
+                {{form_senha.new_password1.errors}}
+                <label>Nova senha: </label>
+                {{form_senha.new_password1}}
+            </div>
 
-    <div class="form-group">
-        {{form_senha.old_password.errors}}
-        <label>Senha antiga: </label>
-        {{form_senha.old_password}}
+            <div class="form-group mt-4">
+                {{form_senha.new_password2.errors}}
+                <label>Confirmação de senha: </label>
+                {{form_senha.new_password2}}
+            </div>
+
+            <div class="form-group text-center">
+                <input type="submit" value="Alterar" class="btn btn-primary">
+            </div>
+            </div>
+        </div>
+        </form>
     </div>
-
-    <div class="form-group">
-        {{form_senha.new_password1.errors}}
-        <label>Nova senha: </label>
-        {{form_senha.new_password1}}
-    </div>
-
-    <div class="form-group">
-        {{form_senha.new_password2.errors}}
-        <label>Confirmação de senha: </label>
-        {{form_senha.new_password2}}
-    </div>
-
-    <div class="form-group">
-        <input type="submit" value="Alterar" class="btn btn-primary">
-    </div>
-</form>
-{% endblock %}
+    {% endblock %}

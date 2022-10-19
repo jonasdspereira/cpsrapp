@@ -63,12 +63,15 @@ def mlogout(request):
   ##Trocando a senha. Amém 3x 
   ##quebrado. funcional mas sem exibição da html
 def alterar_senha(request):
+    data = {}
     if request.method == "POST":
         form_senha = PasswordChangeForm(request.user, request.POST)
         if form_senha.is_valid():
             user = form_senha.save()
             update_session_auth_hash(request, user)
-            return redirect('painel')
+            data['msg'] = 'Senha alterada com Sucesso'
+            data['class'] = 'alert-sucess' 
+            return render(request, 'painel.html', data)
     else:
         form_senha = PasswordChangeForm(request.user)
     return render(request, 'alterar_senha.html', {'form_senha': form_senha})
