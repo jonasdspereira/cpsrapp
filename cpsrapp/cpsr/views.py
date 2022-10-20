@@ -11,6 +11,7 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 
 
+
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
@@ -77,4 +78,4 @@ def alterar_senha(request):
     return render(request, 'alterar_senha.html', {'form_senha': form_senha})
 
 
-
+   

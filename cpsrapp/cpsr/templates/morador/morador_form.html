@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% if request.user.is_authenticated %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Morador</title>
+</head>
+
+<body>
+    <h1>Cadastro de Moradores de Rua</h1>
+    <form method="post" action=".">
+        <div class="col-8 col-sm-6 col-lg-3 col-xl-3 mx-auto m-auto login">
+            {% csrf_token %}
+            <div class="login-box text-center">
+                {{ form.as_p }}
+
+                <input class="btn btn-primary" type="submit" value="Salvar">
+                <input class="btn btn-primary" type="reset" value="Cancelar" onclick="location.href">
+            </div>
+        </div>
+    </form>
+
+</body>
+
+{% else %}
+Acesso Negado! Realize o login para continuar.
+
+{% endif %}
+{% endblock %}

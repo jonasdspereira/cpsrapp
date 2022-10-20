@@ -1,21 +1,38 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<div class="carousel slide" data-ride="carousel">
   <div class="carousel-inner" style="height: 100%">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="{% static '/img/slide1.png' %}" alt="First slide">
+      <img class="d-block w-100" src="{% static '/img/slide1.png' %}" alt="">
+      </div>
     </div>
   </div>
 </div>
-<div class="titulo">
-  <h1>Sobre</h1>
-  <p>Proporcionar a saída de pessoas da situação de rua tornou-se
-    um dos maiores desafios que as grandes cidades de todo o mundo
-    vêm enfrentando atualmente. No Brasil, a inclusão social do segmento em situação de rua tem sido prioridade e vem
-    demandando esforços por parte de todas as esferas de governo. </p>
+<div class="titulo container-home home-box" style="display: flex;" >
+  <div>
+    <a>
+      <img src="{% static '/img/home-imagem.png' %}" class="img-fluid" style="width: 30rem" alt="" />
+    </a>
+  </div>
+  <div style="width: 60%;">
+    <h1>Sobre</h1>
+    <p>Proporcionar a saída de pessoas da situação de rua tornou-se
+      um dos maiores desafios que as grandes cidades de todo o mundo
+      vêm enfrentando atualmente. No Brasil, a inclusão social do segmento em situação de rua tem sido prioridade e vem
+      demandando esforços por parte de todas as esferas de governo. </p>
+    <h1>Quem é a população
+      em situação de rua?</h1>
+    <p>A população em situação de rua é resultado do contexto de desigualdades sociais que caracterizam um sistema de
+      violação de direitos. É um
+      grupo populacional heterogêneo, composto por pessoas com diferentes
+      realidades, mas que têm em comum a condição de pobreza absoluta, vínculos interrompidos ou fragilizados e
+      inexistência de moradia convencional regular, sendo compelidas a utilizarem a rua como espaço de moradia e
+      sustento, por contingência temporária ou de forma permanente.</p>
+  </div>
+  
 </div>
-<div class="container-home">
+<div class="container-home titulo2">
   <div style="padding: 3rem">
     <a>
       <img src="{% static '/img/polls.jpg' %}" class="img-fluid" style="width: 25rem" alt="" />
@@ -27,14 +44,6 @@
     <h3>Já possui?</h3>
     <a class="btn btn btn-outline-primary" href="/painel/">Faça o Login</a><br /><br />
   </div>
-</div>
-<div class="titulo">
-  <h1>Quem é a população
-    em situação de rua?</h1>
-  <p>A população em situação de rua é resultado do contexto de desigualdades sociais que caracterizam um sistema de violação de direitos. É um
-    grupo populacional heterogêneo, composto por pessoas com diferentes
-    realidades, mas que têm em comum a condição de pobreza absoluta, vínculos interrompidos ou fragilizados e inexistência de moradia convencional regular, sendo compelidas a utilizarem a rua como espaço de moradia e
-    sustento, por contingência temporária ou de forma permanente.</p>
 </div>
 
 {% endblock %}

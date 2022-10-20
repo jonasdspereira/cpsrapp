@@ -17,8 +17,9 @@ from ast import Store
 from email.mime import image
 from venv import create
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from cpsr.views import home, create, store, painel, mlogin, dashboard, mlogout, alterar_senha
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,6 +31,8 @@ urlpatterns = [
     path('dashboard/', dashboard),
     path('mlogout/', mlogout),
     path('alterar_senha/', alterar_senha, name='alterar_senha'),
+    path('morador/', include('morador.urls')), 
+
  
  
     

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% if request.user.is_authenticated %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Moradores cadastrados</title>
+</head>
+
+<body>
+    Nome: {{ object.nome }}
+    <br />
+    Idade: {{ object.idade }}
+    <br />
+
+</body>
+
+
+{% else %}
+Acesso Negado! Realize o login para continuar.
+
+{% endif %}
+
+{% endblock %}

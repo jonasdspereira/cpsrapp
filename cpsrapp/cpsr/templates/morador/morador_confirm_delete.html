@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% if request.user.is_authenticated %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Cadastro</title>
+</head>
+
+<body>
+    <h1>Tem certeza que deseja excluir o cadastro do morador '{{ object.nome }}'?:</h1>
+    <form action="." method="post">
+        {% csrf_token %}
+        <input class="btn btn-primary" type="submit" value="Sim, tenho certeza">
+        <input class="btn btn-primary" type="reset" value="Cancelar" onclick="location.href = '{% url 'morador:list' %}'">
+    </form>
+</body>
+
+{% else %}
+Acesso Negado! Realize o login para continuar.
+
+{% endif %}
+{% endblock %}

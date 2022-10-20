@@ -4,29 +4,37 @@
 {% block content %}
     {% if request.user.is_authenticated %}
     <div class="titulo">
-        <h1>Cadastro de Pessoas em Situação de Rua - CPSR</h1>
+        <h3>Cadastro de Pessoas em Situação de Rua - CPSR</h3>
       </div>
-      <div class="container">
-        <div style="width: 25%; height: 25%">
+      <div class="container d-flex justify-content-center box-home">
+        <div style="width: 30%">
             <img
           src="{% static '/img/cadastro.jpg' %}"
           class="img-fluid"
           alt=""
         />
-        <h1>Cadastro de Pessoas</h1>
+        <a href="/morador/create/" style="text-decoration: none;">
+          <h3>
+            Cadastro de Pessoas
+          </h3>
+        </a>
     </div>
-    <div style="width: 25%; height: 25%">
+    <div style="width: 30%;">
         <img
           src="{% static '/img/relatorios.jpg' %}"
           class="img-fluid"
           alt=""
         />
-        <h1>Relatórios</h1>
+        <a href="/morador/" style="text-decoration: none;">
+          <h3>
+            Relatórios
+          </h3>
+        </a>
     </div>
 </div>
 
     {% else %}
-        Você não tem acesso a essa área! Seu Liso!
+    Acesso Negado! Realize o login para continuar.
     {% endif %}
 
     
