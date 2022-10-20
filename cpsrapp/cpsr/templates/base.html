@@ -31,16 +31,27 @@
           <a class="nav-link" href="/">&nbsp;Página Inicial</a>
         </li>
         {% endif %}
-        <li class="nav-item">
-          <a class="nav-link" href="#">&nbsp;Cadastro</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">&nbsp;Relatórios</a>
-        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Cadastro
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Novo Cadastro</a>
+            <a class="dropdown-item" href="#">Importar Cadastro</a>
+            <a class="dropdown-item" href="#">Relatórios</a>
+          </div>
         {% if user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link" href="/mlogout/">&nbsp;Sair</a>
-        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Configurações
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Perfil</a>
+            <a class="dropdown-item" href="/alterar_senha/">Alterar Senha</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/mlogout/">Sair</a>
+          </div>
+      </li>
         <li class="nav-item pull-right">
           <a class="nav-item nav-link">&nbsp;Bem vindo(a), {{user.get_username}}</a>
         </li>
